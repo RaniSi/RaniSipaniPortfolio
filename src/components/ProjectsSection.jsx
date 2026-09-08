@@ -43,14 +43,16 @@ export const ProjectsSection = () => {
                                 <p className="text-muted-foreground text-sm mb-4">{project.description}
                                 </p>
                                 <div className='flex space-x-3'>
-                                    <a href={project.driveUrl}
-                                        target='_blank'
-                                        rel='noreferrer'
-                                        onClick={(e) => e.stopPropagation()}
-                                        title='View on Google Drive'
-                                        className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                                        <HardDrive size={20} />
-                                    </a>
+                                    {project.driveUrl && (
+                                        <a href={project.driveUrl}
+                                            target='_blank'
+                                            rel='noreferrer'
+                                            onClick={(e) => e.stopPropagation()}
+                                            title='View on Google Drive'
+                                            className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                                            <HardDrive size={20} />
+                                        </a>
+                                    )}
                                 </div>
                                 </div>
                             </div>

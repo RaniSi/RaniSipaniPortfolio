@@ -70,14 +70,16 @@ export const ProjectGallery = ({ project, onClose }) => {
                     </p>
                 </div>
                 <div className="flex items-center gap-2">
-                    <a
-                        href={project.driveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hidden sm:flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors px-3 py-2 rounded-full border border-border"
-                    >
-                        <ExternalLink size={16} /> Google Drive
-                    </a>
+                    {project.driveUrl && (
+                        <a
+                            href={project.driveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hidden sm:flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors px-3 py-2 rounded-full border border-border"
+                        >
+                            <ExternalLink size={16} /> Google Drive
+                        </a>
+                    )}
                     <button
                         onClick={onClose}
                         aria-label="Close gallery"

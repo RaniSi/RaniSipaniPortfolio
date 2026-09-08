@@ -103,4 +103,15 @@ export const projects = [
             'INSTA STORY.png',
         ],
     },
+    {
+        id: 7,
+        title: 'Adobe Photoshop – Photo Manipulation & Editing',
+        description:
+            'Creative photo edits and manipulations in Adobe Photoshop — double exposure effects, profile picture retouching, compositing, and color grading.',
+        cover: '/projects/Adobe  photoshop/double exposer.png',
+        folder: 'Adobe  photoshop',
+        tags: ['Photoshop', 'Photo Manipulation', 'Retouching'],
+        driveUrl: null,
+        images: ['double exposer.png', 'dp.png'],
+    },
 ];
