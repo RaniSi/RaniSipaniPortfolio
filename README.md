@@ -31,12 +31,25 @@ Requirements:
 
 ### Testing locally
 
-Run the Vercel function and the Vite dev server side by side:
+Add your Resend credentials to a `.env` file in the project root (already
+git-ignored):
+
+```
+RESEND_API_KEY=re_...
+RESEND_FROM_EMAIL=onboarding@resend.dev
+RESEND_TO_EMAIL=ranisipani879@gmail.com
+```
+
+Then run the API dev server and the Vite dev server side by side:
 
 ```bash
-vercel dev        # terminal 1 — starts the API at http://localhost:3000
-npm run dev       # terminal 2 — Vite proxies /api to localhost:3000
+npm run dev:api    # terminal 1 — serves api/contact.js at http://localhost:3000
+npm run dev        # terminal 2 — Vite proxies /api to localhost:3000
 ```
+
+> **Note:** `npm run dev:api` uses the tiny Node server in
+> [`api/dev-server.mjs`](./api/dev-server.mjs), so the Vercel CLI is not
+> required. If you prefer, `vercel dev` works too.
 
 > **Note:** with the default `onboarding@resend.dev` sender, Resend only allows
 > sending to the email registered on your Resend account. To send to any address,
@@ -45,6 +58,7 @@ npm run dev       # terminal 2 — Vite proxies /api to localhost:3000
 ## Available scripts
 
 - `npm run dev` — start the Vite dev server
+- `npm run dev:api` — start the contact-form API at http://localhost:3000
 - `npm run build` — production build
 - `npm run preview` — preview the production build
 - `npm run lint` — ESLint check

@@ -9,11 +9,34 @@ export const AboutSection = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <img 
-              src="/DP.png" 
-              alt="Rani Sipani" 
-              className="w-80 h-80 rounded-full mx-auto md:mx-0 shadow-md object-cover" 
-            />
+            <div className="group relative w-80 h-80 mx-auto md:mx-0">
+              <div className="w-80 h-80 rounded-full overflow-hidden">
+                <img
+                  src="/DP.png"
+                  alt="Rani Sipani"
+                  className="w-80 h-80 rounded-full shadow-md object-cover transition-transform duration-300 ease-out group-hover:scale-110"
+                />
+              </div>
+              {/* Full view overlay, shown over the profile picture itself on hover */}
+              <div
+                className="absolute inset-0 z-30 flex items-center justify-center overflow-hidden rounded-full opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                role="tooltip"
+                aria-label="Full picture"
+              >
+                {/* Blurred backdrop filling the circle */}
+                <img
+                  src="/DP.png"
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl"
+                />
+                {/* Complete un-cropped photo on top */}
+                <img
+                  src="/DP.png"
+                  alt="Rani Sipani - full picture"
+                  className="relative h-full w-full object-contain drop-shadow-lg"
+                />
+              </div>
+            </div>
             <h3 className="text-2xl font-size semibold">Passionate Designer </h3>
 
             <p>

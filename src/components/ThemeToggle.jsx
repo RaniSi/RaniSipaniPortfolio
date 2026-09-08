@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -28,9 +27,11 @@ export const ThemeToggle = () => {
         }
     }
     return (
-        <button onClick={toogleTheme} className={cn('fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colours duration-300',
-
-        )}>
+        <button
+            onClick={toogleTheme}
+            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+            className="p-2 rounded-full text-foreground/80 hover:text-primary hover:bg-primary/10 transition-colors duration-300"
+        >
         {isDarkMode ? (
         <Sun className='h-6 w-6 text-yellow-300' />
     ) : (
