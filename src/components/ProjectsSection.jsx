@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, HardDrive, Images } from 'lucide-react';
+import { ArrowRight, Images } from 'lucide-react';
 import { projects } from '@/data/projects';
 import { ProjectGallery } from './ProjectGallery';
 
@@ -42,18 +42,6 @@ export const ProjectsSection = () => {
                                 <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
                                 <p className="text-muted-foreground text-sm mb-4">{project.description}
                                 </p>
-                                <div className='flex space-x-3'>
-                                    {project.driveUrl && (
-                                        <a href={project.driveUrl}
-                                            target='_blank'
-                                            rel='noreferrer'
-                                            onClick={(e) => e.stopPropagation()}
-                                            title='View on Google Drive'
-                                            className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                                            <HardDrive size={20} />
-                                        </a>
-                                    )}
-                                </div>
                                 </div>
                             </div>
                         ))

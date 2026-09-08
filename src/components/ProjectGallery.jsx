@@ -3,7 +3,7 @@
 // Escape, click-outside, and touch swipe. Thumbnails jump between images.
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const imageUrl = (project, file) =>
@@ -70,16 +70,6 @@ export const ProjectGallery = ({ project, onClose }) => {
                     </p>
                 </div>
                 <div className="flex items-center gap-2">
-                    {project.driveUrl && (
-                        <a
-                            href={project.driveUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hidden sm:flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors px-3 py-2 rounded-full border border-border"
-                        >
-                            <ExternalLink size={16} /> Google Drive
-                        </a>
-                    )}
                     <button
                         onClick={onClose}
                         aria-label="Close gallery"

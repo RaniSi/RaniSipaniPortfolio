@@ -11,7 +11,6 @@ export const projects = [
         cover: '/projects/Bloom Cafe Logo.png',
         folder: 'Bloom cafe',
         tags: ['Social Media', 'Branding', 'Print Design'],
-        driveUrl: 'https://drive.google.com/drive/folders/1A_CzXylQbMWzEHcI-cCy8DgUBR11Hpai?usp=sharing',
         images: ['Logo.png', 'Grand opening.png', 'Opening.png', 'Menu.png'],
     },
     {
@@ -22,7 +21,6 @@ export const projects = [
         cover: '/projects/Bake Feast.png',
         folder: 'Bake feast',
         tags: ['Social Media', 'Branding', 'Print Design'],
-        driveUrl: 'https://drive.google.com/drive/folders/198v7DPb6s-WZLqGbVRftD7Hdf0-tUh8Q?usp=sharing',
         images: [
             'Intro Post.png',
             'Badge.png',
@@ -45,7 +43,6 @@ export const projects = [
         cover: '/projects/Glow Skin Logo.png',
         folder: 'Glow',
         tags: ['Social Media', 'Branding', 'Logo Design'],
-        driveUrl: 'https://drive.google.com/drive/folders/1AEd-XpypJg0a3e3ETAz1rUmyQkXNj9ij?usp=sharing',
         images: ['LOGO.png', '1ST POST.png', '2ND POST.png', '3RD POST.png', 'STORY.png'],
     },
     {
@@ -56,7 +53,6 @@ export const projects = [
         cover: '/projects/Eco Wrap.png',
         folder: 'Eco wrap',
         tags: ['Social Media', 'Branding', 'Logo Design'],
-        driveUrl: 'https://drive.google.com/drive/folders/175LysYsLXysVQE7OzNxYiCeuTrT3xHZ6?usp=sharing',
         images: [
             'Logo.png',
             'FACEBOOK AD.png',
@@ -73,7 +69,6 @@ export const projects = [
         cover: '/projects/Poetry.png',
         folder: 'Poetry',
         tags: ['Social Media', 'Branding', 'Logo Design'],
-        driveUrl: 'https://drive.google.com/drive/folders/18YukbkDLUC2oa0-o9haCh_lIYo7uHzGu?usp=sharing',
         images: [
             'LOGO.png',
             'INSTA POST 1ST.png',
@@ -92,7 +87,6 @@ export const projects = [
         cover: '/projects/Ice Cream.png',
         folder: 'Ice cream',
         tags: ['Social Media', 'Branding', 'Logo Design'],
-        driveUrl: 'https://drive.google.com/drive/folders/17ilppjBqEuYWkKy9OYJdFQj_N69ySOuq?usp=sharing',
         images: [
             'Logo_.png',
             'INSTA POST.png',
@@ -111,7 +105,6 @@ export const projects = [
         cover: '/projects/Adobe photoshop/double exposer.png',
         folder: 'Adobe photoshop',
         tags: ['Photoshop', 'Photo Manipulation', 'Retouching'],
-        driveUrl: null,
         images: ['double exposer.png', 'dp.png'],
     },
 ];
