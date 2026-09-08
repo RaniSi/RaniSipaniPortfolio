@@ -1,65 +1,11 @@
-import { ExternalLink, HardDrive } from 'lucide-react';
-import { ArrowRight } from 'lucide-react';
-
-const projects = [
-    {
-        id: 1,
-        title: 'Bloom Cafe',
-        description: 'Seasonal campaign add-on to your previous cafe project, Fall-themed Insta posts (pumpkin spice, cozy drinks, special discounts), Poster for “Open Mic Night” at the cafe and Loyalty card design',
-        image: './projects/Bloom Cafe Logo.png',
-        tags: ['Social Media', 'Branding', 'Print Design'],
-        demoUrl: 'https://drive.google.com/drive/folders/1A_CzXylQbMWzEHcI-cCy8DgUBR11Hpai?usp=sharing',
-        githubUrl: 'https://drive.google.com/drive/folders/1A_CzXylQbMWzEHcI-cCy8DgUBR11Hpai?usp=sharing'
-    },
-    {
-        id: 2,
-        title: 'BakeFest 2025 - Jaipur',
-        description: 'A city-wide baking festival for home bakers & foodies, Poster or flyer, Instagram carousel (with details of event, guests, and location) and Badge or tag design for attendees',
-        image: './projects/Bake Feast.png',
-        tags: ['Social Media', 'Branding', 'Print Design'],
-        demoUrl: 'https://drive.google.com/drive/folders/198v7DPb6s-WZLqGbVRftD7Hdf0-tUh8Q?usp=sharing',
-        githubUrl: 'https://drive.google.com/drive/folders/198v7DPb6s-WZLqGbVRftD7Hdf0-tUh8Q?usp=sharing'
-    },
-    {
-        id: 3,
-        title: 'Glow Skin Co.',
-        description: 'Natural skincare brand targeting Gen Z, Logo & brand palette, 3 Instagram posts: product highlight, skincare tips, launch offer and 1 story template',
-        image: './projects/Glow Skin Logo.png',
-        tags: ['Social Media', 'Branding', 'Logo Design'],
-        demoUrl: 'https://drive.google.com/drive/folders/1AEd-XpypJg0a3e3ETAz1rUmyQkXNj9ij?usp=sharing',
-        githubUrl: 'https://drive.google.com/drive/folders/1AEd-XpypJg0a3e3ETAz1rUmyQkXNj9ij?usp=sharing'
-    },
-    {
-        id: 4,
-        title: 'EcoWrap - Reusable Food Wraps',
-        description: 'Sustainable kitchen brand, Google Display ads or Facebook ad mockups (3 sizes), Instagram post + Story design and Product insert (thank-you card or usage instructions) ',
-        image: './projects/Eco Wrap.png',
-        tags: ['Social Media', 'Branding', 'Logo Design'],
-        demoUrl: 'https://drive.google.com/drive/folders/175LysYsLXysVQE7OzNxYiCeuTrT3xHZ6?usp=sharing',
-        githubUrl: 'https://drive.google.com/drive/folders/175LysYsLXysVQE7OzNxYiCeuTrT3xHZ6?usp=sharing'
-    },
-    {
-        id: 5,
-        title: 'Sia Rain – Spoken Word & Poetry Artist Branding',
-        description: 'A fictional poet who shares deeply emotional short poems through visuals, performances, and minimalist social media storytelling, Monogram or Wordmark Logo (Sia Rain)Instagram Quote Series, Story Template for New Poem Drops, Bookmark Merch Mockup',
-        image: './projects/Poetry.png',
-        tags: ['Social Media', 'Branding', 'Logo Design'],
-        demoUrl: 'https://drive.google.com/drive/folders/18YukbkDLUC2oa0-o9haCh_lIYo7uHzGu?usp=sharing',
-        githubUrl: 'https://drive.google.com/drive/folders/18YukbkDLUC2oa0-o9haCh_lIYo7uHzGu?usp=sharing'
-    },
-    {   
-        id: 6,
-        title: 'Aura Gelaton',
-        description: 'An ice cream company inauguration create a welcome post with opening details and logo mentioned in the post.',
-        image: './projects/Ice Cream.png',
-        tags: ['Social Media', 'Branding', 'Logo Design'],
-        demoUrl: 'https://drive.google.com/drive/folders/17ilppjBqEuYWkKy9OYJdFQj_N69ySOuq?usp=sharing',
-        githubUrl: 'https://drive.google.com/drive/folders/17ilppjBqEuYWkKy9OYJdFQj_N69ySOuq?usp=sharing'
-    }
-
-]
+import { useState } from 'react';
+import { ArrowRight, HardDrive, Images } from 'lucide-react';
+import { projects } from '@/data/projects';
+import { ProjectGallery } from './ProjectGallery';
 
 export const ProjectsSection = () => {
+    const [activeProject, setActiveProject] = useState(null);
+
     return (
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
@@ -75,9 +21,16 @@ export const ProjectsSection = () => {
                         projects.map((project, key) => (
                             <div
                                 key={key}
-                                className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
-                                <div className="h-48 overflow-hidden">
-                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform "/>
+                                onClick={() => setActiveProject(project)}
+                                className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover cursor-pointer">
+                                <div className="relative h-48 overflow-hidden">
+                                    <img src={project.cover} alt={project.title} className="w-full h-full object-cover transition-transform "/>
+                                    <div className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium shadow-lg">
+                                            <Images size={16} />
+                                            View Gallery ({project.images.length})
+                                        </span>
+                                    </div>
                                 </div>
                                 <div className="p-6">
                                     <div className="flex flex-wrap gap-2 mb-4">
@@ -90,15 +43,13 @@ export const ProjectsSection = () => {
                                 <p className="text-muted-foreground text-sm mb-4">{project.description}
                                 </p>
                                 <div className='flex space-x-3'>
-                                    <a href={project.demoUrl}
+                                    <a href={project.driveUrl}
                                         target='_blank'
+                                        rel='noreferrer'
+                                        onClick={(e) => e.stopPropagation()}
+                                        title='View on Google Drive'
                                         className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                                        <ExternalLink size={20} />
-                                    </a>
-                                    <a href={project.githubUrl}
-                                        target=""
-                                        className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                                        <HardDrive size={20}/>
+                                        <HardDrive size={20} />
                                     </a>
                                 </div>
                                 </div>
@@ -116,6 +67,12 @@ export const ProjectsSection = () => {
                     
                 </div>
             </div>
+            {activeProject && (
+                <ProjectGallery
+                    project={activeProject}
+                    onClose={() => setActiveProject(null)}
+                />
+            )}
         </section>
     )
 }
