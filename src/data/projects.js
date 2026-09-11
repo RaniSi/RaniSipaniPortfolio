@@ -107,4 +107,20 @@ export const projects = [
         tags: ['Photoshop', 'Photo Manipulation', 'Retouching'],
         images: ['double exposer.png', 'dp.png'],
     },
+    {
+        id: 8,
+        title: 'Social Wardrobe – Fashion & Apparel Branding',
+        description:
+            'An online fashion brand for trendy, affordable clothing, Monogram & wordmark logo, Instagram flash sale post, styling guide post (one top, 3 styles) and an interactive “What’s Your Vibe?” engagement post',
+        cover: '/projects/Social Wardrobe/social wardrobe.jpg',
+        folder: 'Social Wardrobe',
+        tags: ['Social Media', 'Branding', 'Logo Design'],
+        images: [
+            'social wardrobe.jpg',
+            'social wardrobe logo 2.jpg',
+            'SOCIAL WARDROBE POST 1.jpg',
+            'social wardrobe post 2.jpg',
+            'social wardrobe post 3.jpg',
+        ],
+    },
 ];
